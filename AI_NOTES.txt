@@ -1,0 +1,18 @@
+AI tool used: Claude (Anthropic)
+
+Prompt 1: "help me deploy this [repo link], backend is done, when this
+URL is hit it shows my entire index.js but frontend shows not found"
+Used: Modified. Claude diagnosed the missing vercel.json/api folder
+issue; I applied the restructuring (moved index.js into api/) myself
+and adapted it to my actual file layout.
+
+Prompt 2: [pasted the runtime crash log with DOMMatrix error]
+Used: Modified. Claude identified pdf-parse's pdfjs-dist dependency as
+the cause and suggested switching to unpdf. I rewrote
+Services/documentParser.js myself using unpdf's API, adjusting it to
+fit my existing extractText function signature.
+
+Prompt 3: ongoing deployment debugging (env vars, error handling)
+Used: Directly followed suggested steps (adding env vars in Vercel
+dashboard, adding a global error handler to surface real error
+messages) with no code changes needed beyond copy-pasting the handler.
